@@ -1,0 +1,45 @@
+---
+// Posts-H: Futuristic Dark Glass - Design tecnológico e imersivo
+import { getAllPosts } from '../lib/posts';
+interface Props { title: string; limit: number; btnText: string; btnLink: string; }
+const { title, limit, btnText, btnLink } = Astro.props;
+
+const posts = (await getAllPosts()).slice(0, limit);
+---
+<section class="py-24 bg-dark text-white overflow-hidden relative">
+  <!-- Subtle Gradient Background Elements -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-[150px] -z-0"></div>
+  
+  <div class="max-w-6xl mx-auto px-4 relative z-10 w-full text-center mb-16 lg:mb-24">
+    <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+       <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(var(--color-primary),0.8)]"></span>
+       <span class="text-[9px] font-black uppercase tracking-[0.4em] text-white/40">Inovação Editorial</span>
+    </div>
+    <h2 class="text-4xl md:text-7xl font-black tracking-tighter italic uppercase leading-none">{title}</h2>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 relative z-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {posts.map(post => (
+      <article class="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 transition-all duration-500 hover:bg-white/10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10">
+        <header class="mb-8">
+           <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-black uppercase tracking-widest text-primary/60 group-hover:text-primary transition-colors">{post.category || 'Futurismo'}</span>
+              <span class="text-[9px] font-bold text-white/20 uppercase tracking-widest">08 Min</span>
+           </div>
+           <h3 class="text-2xl font-black leading-tight tracking-tight mt-2 group-hover:text-primary transition-colors">
+              <a href={`/${post.slug}`} class="block">{post.title}</a>
+           </h3>
+        </header>
+        
+        <p class="text-sm text-white/40 leading-relaxed font-medium mb-10 group-hover:text-white/60 transition-colors">
+           {post.description.substring(0, 100)}...
+        </p>
+
+        <footer class="flex items-center justify-between pt-8 border-t border-white/5">
+           <img src={post.heroImage} class="w-8 h-8 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all duration-500" />
+           <a href={`/${post.slug}`} class="text-[10px] font-black uppercase tracking-widest text-white/40 group-hover:text-primary group-hover:translate-x-2 transition-all">LER ARTIGO →</a>
+        </footer>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "ADVENTUREBLOGGERS — Descubra o Mundo com a Gente!",
+    "description": "Cinco blogueiros unidos pela paixão por viagens e aventuras."
+  },
+  "hero": {
+    "title": "Descubra o Mundo com a Gente!",
+    "subtitle": "Cinco blogueiros unidos pela paixão por viagens e aventuras.",
+    "btnText": "Explore Nossas Aventuras",
+    "bgImage": "/images/hero.jpg",
+    "btnLink": "/blog"
+  },
+  "features": {
+    "title": "O Que Oferecemos",
+    "items": [
+      {
+        "icon": "🌍",
+        "title": "Dicas Exclusivas",
+        "desc": "Compartilhamos as melhores dicas de viagem que você não encontra em qualquer lugar."
+      },
+      {
+        "icon": "✈️",
+        "title": "Rotas Alternativas",
+        "desc": "Explore destinos fora do tradicional e conheça lugares incríveis."
+      },
+      {
+        "icon": "📸",
+        "title": "Histórias Inspiradoras",
+        "desc": "Relatos emocionantes de nossas aventuras e dos nômades que conhecemos pelo caminho."
+      },
+      {
+        "icon": "🍽️",
+        "title": "Cultura Local",
+        "desc": "Saiba mais sobre a cultura dos lugares que visitamos através da culinária, tradições e interações."
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "desc": "Somos um grupo de cinco viajantes apaixonados que se uniram para compartilhar experiências únicas e valiosas sobre o mundo das viagens. Acreditamos que cada viagem é uma oportunidade de aprendizado e descoberta. Combinamos nossas experiências e conhecimentos para oferecer um conteúdo original e autêntico.",
+    "stats": [
+      {
+        "value": "5",
+        "label": "Blogueiros"
+      },
+      {
+        "value": "50+",
+        "label": "Destinos Visitados"
+      },
+      {
+        "value": "100+",
+        "label": "Dicas de Viagem"
+      }
+    ],
+    "image": "/images/about.jpg",
+    "btnText": "Saiba Mais",
+    "btnLink": "/sobre"
+  },
+  "posts": {
+    "title": "Últimos Artigos",
+    "limit": 3,
+    "btnText": "Ver Blog",
+    "btnLink": "/blog"
+  }
+}

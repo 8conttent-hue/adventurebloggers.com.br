@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Sobre Nós",
+    "description": "Conheça o ADVENTUREBLOGGERS"
+  },
+  "hero": {
+    "title": "Sobre Nós",
+    "subtitle": "Somos um grupo de cinco viajantes apaixonados que se uniram para compartilhar experiências únicas e valiosas sobre o mundo das viagens. Acreditamos que cada viagem é uma oportunidade de aprendizado e descoberta. Combinamos nossas experiências e conhecimentos para oferecer um conteúdo original e autêntico."
+  },
+  "content": "No AdventureBloggers, estamos comprometidos em oferecer um espaço onde todos podem encontrar inspiração para suas próximas aventuras. Desde dicas práticas até histórias pessoais, nosso objetivo é tornar cada viagem uma dessa memorável.",
+  "mission": "Nossa missão é encorajar as pessoas a explorar o mundo com curiosidade e coragem, mostrando que a aventura está ao alcance de todos.",
+  "image": "/images/sobre.jpg",
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Artigos"
+    },
+    {
+      "value": "100k+",
+      "label": "Leitores"
+    },
+    {
+      "value": "5",
+      "label": "Redatores"
+    }
+  ],
+  "team": []
+}

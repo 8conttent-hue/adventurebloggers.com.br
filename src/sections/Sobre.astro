@@ -1,0 +1,73 @@
+---
+// Sobre-F: Movie/Video Manifesto - Design narrativo e cinematográfico
+interface Stat { value: string; label: string; }
+interface Props {
+  title: string;
+  desc: string;
+  image: string;
+  stats: Stat[];
+  content?: string;
+}
+const { title, desc, image, stats, content } = Astro.props;
+
+const manifestoData = [
+  { label: 'Cuidado Localizado', text: 'Entendendo a dinâmica familiar onde ela acontece.' },
+  { label: 'Análise Profunda', text: 'Decodificando sinais sutis em mídias sociais digitais.' },
+  { label: 'Foco na Família', text: 'Empoderando cuidadores com informação baseada em ciência.' },
+  { label: 'Impacto Real', text: 'Transformando pesquisa em intervenções clínicas práticas.' }
+];
+---
+<section class="min-h-screen bg-dark text-white relative overflow-hidden flex flex-col justify-center">
+  <!-- Dynamic Background Element -->
+  <div class="absolute inset-0 z-0">
+    <img src={image} class="w-full h-full object-cover opacity-20 scale-110 blur-sm animate-pulse-slow" alt="Cinema Background" />
+    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 relative z-10 w-full pt-24 pb-12">
+    <div class="max-w-4xl">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary border border-primary/20 text-[10px] font-black uppercase tracking-[0.4em] mb-8 animate-fade-in-down">
+         Manifesto de Cuidado 2025
+      </span>
+      <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-none mb-12 uppercase italic">{title}</h1>
+      <p class="text-xl md:text-4xl font-light text-white/40 leading-tight italic max-w-2xl mb-12 animate-fade-in">
+        "{desc}"
+      </p>
+      {content && <p class="text-gray-600 leading-relaxed mt-6 max-w-2xl mx-auto">{content}</p>}
+    </div>
+
+    <!-- Manifesto Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+       {manifestoData?.map(item => (
+         <div class="group border-l-2 border-white/5 pl-6 py-4 hover:border-primary transition-all">
+            <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 group-hover:text-primary mb-3">{item.label}</h4>
+            <p class="text-sm font-medium leading-relaxed group-hover:text-white transition-colors">{item.text}</p>
+         </div>
+       ))}
+    </div>
+
+    <!-- Hero Stats -->
+    <div class="flex flex-wrap items-center gap-16 pt-12 border-t border-white/5 opacity-40 group hover:opacity-100 transition-opacity">
+       {stats?.map(s => (
+         <div>
+            <div class="text-4xl font-black text-white mb-2">{s.value}</div>
+            <div class="text-xs font-black uppercase tracking-widest text-white/30">{s.label}</div>
+         </div>
+       ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-down {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { transform: scale(1.1); opacity: 0.15; }
+    50% { transform: scale(1.15); opacity: 0.25; }
+  }
+  .animate-fade-in-down { animation: fade-in-down 1s ease-out; }
+  .animate-fade-in { animation: fade-in-down 1s ease-out 0.5s both; }
+  .animate-pulse-slow { animation: pulse-slow 8s infinite alternate ease-in-out; }
+</style>

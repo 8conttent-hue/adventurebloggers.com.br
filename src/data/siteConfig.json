@@ -1,0 +1,53 @@
+{
+  "name": "ADVENTUREBLOGGERS",
+  "slug": "adventurebloggers.com.br",
+  "description": "Somos 5 blogueiros viajantes que dividimos este espaço para compartilhar nossas aventuras, dicas de viagens e Lifestyle.. Nós percebemos que o mundo dos blogs é gigante e existem muitos conteúdos iguais.. Pensando em como resolver esse problema nós entramos em contato com nômades bem experientes para que eles escrevessem em nosso Blog ou simplesmente trouxessem conteúdos “fora da caixa”… E é exatamente isso que vem acontecendo! Então esperamos que gostem e tirem proveito dos nossos conteúdos!",
+  "url": "https://adventurebloggers.com.br",
+  "niche": "Viagens e Turismo",
+  "keywords": "Somos 5 blogueiros viajantes que dividimos este espaco para compartilhar nossas aventuras",
+  "email": "contato@adventurebloggers.com.br",
+  "palette": "slate",
+  "colors": {
+    "primary": "#334155",
+    "accent": "#1e293b",
+    "dark": "#0f172a"
+  },
+  "headerContrast": "dark",
+  "font": "outfit",
+  "fontFamily": "'Outfit', sans-serif",
+  "fontUrl": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap",
+  "components": {
+    "header": "Header-J",
+    "hero": "Hero-D",
+    "features": "Features-A",
+    "about": "About-G",
+    "posts": "Posts-H",
+    "footer": "Footer-F",
+    "sobre": "Sobre-F",
+    "contato": "Contato-C"
+  },
+  "menu": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Sobre",
+      "href": "/sobre"
+    },
+    {
+      "label": "Contato",
+      "href": "/contato"
+    }
+  ],
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "twitter": "",
+    "youtube": ""
+  }
+}

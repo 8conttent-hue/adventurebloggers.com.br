@@ -1,0 +1,80 @@
+---
+// Contato-C: Formulário + FAQ abaixo
+interface Props {
+  title: string;
+  subtitle: string;
+  email: string;
+  responseTime?: string;
+  content?: string;
+}
+const { title, subtitle, email, responseTime, content } = Astro.props;
+---
+<!-- Hero -->
+<section class="py-20 bg-gradient-to-br from-dark to-accent text-white text-center">
+  <div class="max-w-2xl mx-auto px-4">
+    <span class="text-xs font-bold uppercase tracking-widest text-primary/80 mb-4 block">Fale Conosco</span>
+    <h1 class="text-4xl md:text-5xl font-black mb-4">{title}</h1>
+    <p class="text-white/70 text-lg">{subtitle}</p>
+      {content && <p class="text-gray-500 mt-4 leading-relaxed max-w-2xl mx-auto">{content}</p>}
+  </div>
+</section>
+
+<!-- Formulário -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 space-y-5">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-bold text-dark mb-2">Nome</label>
+          <input type="text" name="name" required
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-primary transition-colors"
+            placeholder="Seu nome" />
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-dark mb-2">E-mail</label>
+          <input type="email" name="email" required
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-primary transition-colors"
+            placeholder="seu@email.com" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-dark mb-2">Mensagem</label>
+        <textarea name="message" rows="5" required
+          class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-primary transition-colors resize-none"
+          placeholder="Sua mensagem..."></textarea>
+      </div>
+      <button type="submit"
+        class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:opacity-90 transition-opacity">
+        Enviar Mensagem
+      </button>
+      <div class="text-center">
+        {responseTime && <p class="text-gray-400 text-xs">{responseTime}</p>}
+        <a href={`mailto:${email}`} class="text-primary text-sm hover:underline">{email}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-primary mb-3 block">FAQ</span>
+      <h2 class="text-3xl font-black text-dark">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="space-y-4">
+      {[
+        { q: 'Quanto tempo levam para responder?', a: 'Respondemos todas as mensagens em até 48 horas úteis.' },
+        { q: 'Posso sugerir temas para o blog?', a: 'Sim! Adoramos sugestões de nossos leitores. Use o formulário acima.' },
+        { q: 'Como posso contribuir com conteúdo?', a: 'Entre em contato informando sua área de expertise e teremos prazer em conversar.' },
+        { q: 'Vocês fazem parcerias?', a: 'Avaliamos propostas de parceria caso a caso. Envie os detalhes pelo formulário.' },
+      ].map(faq => (
+        <div class="p-6 rounded-2xl border border-gray-100 hover:border-primary/20 transition-colors">
+          <h3 class="font-bold text-dark mb-2">{faq.q}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
