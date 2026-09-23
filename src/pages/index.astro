@@ -8,7 +8,7 @@ import Posts from '../sections/Posts.astro';
 import Footer from '../sections/Footer.astro';
 import homeData from '../data/home.json';
 ---
-<BaseLayout title={homeData.meta.title} description={homeData.meta.description}>
+<BaseLayout title={homeData.meta.title} description={homeData.meta.description} image="/images/hero.jpg">
   <Header />
   <Hero {...homeData.hero} />
   <Features {...homeData.features} />
