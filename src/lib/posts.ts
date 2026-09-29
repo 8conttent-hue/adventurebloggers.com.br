@@ -59,12 +59,10 @@ export async function getPosts(): Promise<Post[]> {
   try {
     const { data, error } = await supabase
       .from('network_posts')
-      .select('*')
-      .eq('domain', DOMAIN)
-      .order('published_at', { ascending: false });
+      .select('id,slug,title,meta_description,featured_image,published_at,domain').eq('domain', DOMAIN).limit(100);
 
     if (!error && data && data.length > 0) {
-      return data as Post[];
+      return (data as Post[]).sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
     }
 
     return [];
